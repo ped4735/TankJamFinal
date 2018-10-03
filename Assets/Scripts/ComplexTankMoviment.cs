@@ -153,17 +153,19 @@ public class ComplexTankMoviment : MonoBehaviour
         //PLACEHOLDER: Verify is reloading on the command, not here in here
         if (!isReloading)
         {
-            RaycastHit2D hit = Physics2D.Raycast(muzzle.transform.position, muzzle.transform.up, 10);
+            RaycastHit2D hit = Physics2D.Raycast(muzzle.transform.position, muzzle.transform.up, Mathf.Infinity);
             Debug.DrawRay(muzzle.transform.position, muzzle.transform.up * 10, Color.blue,1f);
 
             if (hit)
             {
                 GameObject hitObject = hit.collider.gameObject;
-                
-                if (hitObject.tag == "Enemy") {
-                    Destroy (hitObject.gameObject);
+                Debug.Log("Hit something: "+ hitObject);
+                if (hitObject.tag == "Enemy")
+                {
+                    
+                    hitObject.GetComponent<ExplosionSript>().StartExplosion();
                 }
-                //Debug.Log("Hit something: "+ hitObject);
+                
             }
             cmd.ReceiveCommand("SHOOT\n");
             StartCoroutine(ReloadCoroutine());

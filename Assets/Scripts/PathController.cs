@@ -7,7 +7,9 @@ public class PathController : MonoBehaviour {
     public List<Transform> targets = new List<Transform>();
     public float moveSpeed;
     public float rotSpeed;
+    public float waitEveryWaypoint;
 
+    private bool reachDestination;
     private Transform currentTarget;
     private int count;
 
@@ -19,23 +21,38 @@ public class PathController : MonoBehaviour {
     void Update () {
 
         float time = Time.deltaTime;
+        Vector3 distance = currentTarget.position - transform.position;
+
+       
+        if(reachDestination)    
+            return;
+        
 
         if(Vector3.Distance(currentTarget.position, transform.position) > 1f)
         {
-            Vector3 distance = currentTarget.position - transform.position;
-            transform.Translate(distance.normalized * time, Space.World);
+            transform.Translate(distance.normalized * time, Space.World);  
             transform.up = Vector3.Lerp(transform.up, distance, time);
         }
         else
         {
             if(++count >= targets.Count)
-                count = 0;            
+                count = 0;
 
+            StartCoroutine(WaitToMove());
             currentTarget = targets[count];
             
         }
 
 	}
+
+    public IEnumerator WaitToMove()
+    {
+        reachDestination = true;
+        yield return new WaitForSeconds(waitEveryWaypoint);
+        reachDestination = false;
+    }
+
+    
 
     private void OnDrawGizmos()
     {

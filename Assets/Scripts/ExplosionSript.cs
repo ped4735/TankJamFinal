@@ -9,5 +9,6 @@ public class ExplosionSript : MonoBehaviour {
 
 	public void StartExplosion(){
 		GameObject obj = Instantiate(exp,this.transform.position,Quaternion.identity);
+		Destroy(gameObject);
 	}
 }
