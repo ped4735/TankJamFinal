@@ -32,18 +32,6 @@ public class ComplexTankMoviment : MonoBehaviour
 
     [SerializeField] private bool isTurretRotating;
     
-    void Start()
-    {
-        turret = this.transform.GetChild(1);
-        Debug.Log(turret.gameObject.name);
-
-        
-       
-        //tankRotation = this.transform.rotation;
-
-    }
-
-
     void Update()
     {
 
@@ -90,8 +78,6 @@ public class ComplexTankMoviment : MonoBehaviour
             rotateTurretAngleRight -= rotationTurretAngleAmount;
         }
 
-
-        //TestMoviment();
     }
 
 
