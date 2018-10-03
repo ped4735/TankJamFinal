@@ -82,6 +82,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
+  distToChangeAlpha: 20
+  baseAlpha: 0
+  alphaMultiplier: 0.6
+  greenMultiplier: 3.7
 --- !u!212 &212369558197007164
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -116,8 +120,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 50
-  m_Sprite: {fileID: 21300000, guid: 7ad3654e1de736b4baff19420fe09e33, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: fae2929547feff84da75173f8729ab00, type: 3}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.535}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

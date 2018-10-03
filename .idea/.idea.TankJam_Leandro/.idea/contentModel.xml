@@ -5,6 +5,7 @@
     <e p="C:\Users\ped88\Desktop\TankJam_Leandro" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets\ButtonReset.cs" t="Include" />
       <e p="Assets\Cinemachine" t="Include">
         <e p="Base" t="Include">
           <e p="Editor" t="Include">
@@ -135,12 +136,17 @@
         </e>
       </e>
       <e p="Assets\Scripts" t="Include">
+        <e p="ArrowScripts" t="Include">
+          <e p="CreateArrowsToPoint.cs" t="Include" />
+          <e p="PointToEnemy.cs" t="Include" />
+        </e>
         <e p="BasicTankMoviment.cs" t="Include" />
         <e p="CommandController.cs" t="Include" />
         <e p="ComplexTankMoviment.cs" t="Include" />
         <e p="EnemyMovement.cs" t="Include" />
         <e p="ExplosionDestroyScript.cs" t="Include" />
         <e p="ExplosionSript.cs" t="Include" />
+        <e p="GameController.cs" t="Include" />
         <e p="NewBehaviourScript.cs" t="Include" />
         <e p="PathController.cs" t="Include" />
         <e p="Shooting.cs" t="Include" />
