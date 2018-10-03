@@ -65,11 +65,13 @@ public class CommandController : MonoBehaviour
 					break;
 				case "rr":
 					_cmdLog.text += "<color=#55b938>Rotate Right! " + float.Parse(_cmds[1]) + "\n";
-					_tank.RotateRightByTime(float.Parse(_cmds[1]));
+					// _tank.RotateRightByTime(float.Parse(_cmds[1]));
+					_tank.RotateTankRight(float.Parse(_cmds[1]));
 					break;
 				case "rl":
 					_cmdLog.text += "<color=#55b938>Rotate Left! " + float.Parse(_cmds[1]) + "\n";
-					_tank.RotateLeftByTime(float.Parse(_cmds[1]));
+					// _tank.RotateLeftByTime(float.Parse(_cmds[1]));
+						_tank.RotateTankLeft(float.Parse(_cmds[1]));
 					break;
 				case "rtr":
 					_cmdLog.text += "<color=#55b938>Rotate Turret Right! " + float.Parse(_cmds[1]) + "\n";

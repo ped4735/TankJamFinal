@@ -15,7 +15,8 @@ public class ComplexTankMoviment : MonoBehaviour
     public float breakAmount = 1f;
     public float reverseAmount = 0.1f;
     public float rotationAmount = 0.1f;
-    public float rotationTurretAngleAmount = 1f;
+    public float rotationTurretAngleAmount = 0.5f;
+    public float rotationTankAngleAmount = 1f;
 
     //time amounts
     private float accelerateTime;
@@ -25,6 +26,8 @@ public class ComplexTankMoviment : MonoBehaviour
     private float rotateTurretAngleRight;
     private float breakTime;
     private float reverseByTime;
+    private float rotateTankLeft;
+    private float rotateTankRight;
     
     
     //rotation stats
@@ -77,7 +80,15 @@ public class ComplexTankMoviment : MonoBehaviour
             turret.transform.Rotate(new Vector3(0f, 0f, -rotationTurretAngleAmount));
             rotateTurretAngleRight -= rotationTurretAngleAmount;
         }
-
+        if (rotateTankRight > 0){
+            this.transform.Rotate(new Vector3(0f, 0f, -rotationTankAngleAmount));
+            rotateTankRight -= rotationTankAngleAmount;
+        }
+        if (rotateTankLeft > 0){
+            this.transform.Rotate(new Vector3(0f, 0f, +rotationTankAngleAmount));
+            rotateTankLeft -= rotationTankAngleAmount;
+        }
+        // TestMoviment();
     }
 
 
@@ -87,6 +98,13 @@ public class ComplexTankMoviment : MonoBehaviour
     
     public void RotateTurretRight(float angle){
         rotateTurretAngleRight =  angle;
+    }
+    public void RotateTankLeft(float angle){
+        rotateTankLeft = angle;
+    }
+    
+    public void RotateTankRight(float angle){
+        rotateTankRight =  angle;
     }
     
     public void AccByTime(float time){
@@ -121,6 +139,8 @@ public class ComplexTankMoviment : MonoBehaviour
         reverseByTime = 0f;
         rotateTimeRight = 0f;
         rotateTimeLeft = 0f;
+        rotateTankLeft = 0f;
+        rotateTankRight = 0f;
     }
 
     void TestMoviment(){
@@ -145,6 +165,13 @@ public class ComplexTankMoviment : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E)){
             RotateTurretRight(15f);
         }
+        if (Input.GetKeyDown(KeyCode.Z)){
+            RotateTankLeft(15f);
+        }
+        if (Input.GetKeyDown(KeyCode.C)){
+            RotateTankRight(15f);
+        }
+        
     }
 
     public void Shoot()
