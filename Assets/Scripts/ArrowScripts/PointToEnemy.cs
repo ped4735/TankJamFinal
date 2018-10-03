@@ -53,8 +53,6 @@ public class PointToEnemy : MonoBehaviour {
 		
 		float green =  1f - greenMultiplier*Mathf.Clamp(baseAlpha + ((distToChangeAlpha - dist)/(2*distToChangeAlpha)),0,1f);
 
-		Debug.Log(dist + " " + alpha + " " + green + " " + baseAlpha + " " + distToChangeAlpha);
-
 		Color c = arrowSpriteRenderer.color;
 		c.a = alpha;
 		if (dist<distToChangeAlpha){
