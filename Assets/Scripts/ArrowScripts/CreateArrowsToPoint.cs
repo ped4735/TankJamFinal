@@ -13,7 +13,7 @@ public class CreateArrowsToPoint : MonoBehaviour {
 		enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
 		foreach(GameObject enemie in enemies){
-			GameObject obj = Instantiate(arrowPrefab,Vector3.zero,Quaternion.identity);
+			GameObject obj = Instantiate(arrowPrefab,transform.position,Quaternion.identity);
 			obj.GetComponent<PointToEnemy>().SetEnemy(enemie);
 			obj.transform.SetParent(this.transform);
 		}
