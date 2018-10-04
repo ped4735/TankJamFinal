@@ -56,8 +56,8 @@ public class CommandController : MonoBehaviour
 			{
 				
 				case "brk":
-					_cmdLog.text += "<color=#55b938>BREAK! " + float.Parse(_cmds[1]) + "\n";
-					_tank.BreakByTime(float.Parse(_cmds[1]));
+					_cmdLog.text += "<color=#55b938>BREAK! \n";
+					_tank.BreakByTime(1f);
 					break;
 				case "acc":
 					_cmdLog.text += "<color=#55b938>Accelerate! " + float.Parse(_cmds[1]) + "\n";
